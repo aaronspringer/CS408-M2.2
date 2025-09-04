@@ -27,3 +27,7 @@ To run the tests for the project, run the following command:
 ```bash
 npm test
 ```
+
+## Running the server
+
+Using the VSCode Live Server extension, run the VSCode command `Live Preview: Start Server`, then access the frontend at `127.0.1:3000`

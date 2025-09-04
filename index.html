@@ -12,6 +12,13 @@
 
 <body>
   <h1>HTML Rocks!</h1>
+  <ul>
+    <li>My name is Aaron Springer</li>
+    <li>I expect to graduate in May 2027</li>
+    <li>I do not have a job doing web dev, and have never had one.</li>
+  </ul>
+  <p>I have no recent pictures of me, enjoy this tree</p>
+  <img src="https://s3-eu-west-1.amazonaws.com/blog-ecotree/blog/0001/01/ad46dbb447cd0e9a6aeecd64cc2bd332b0cbcb79.jpeg" width="30%">
   <p>
     <button  onclick="helloWorld()">Prints Hello World to the Developer console</button>
   </p>
@@ -87,15 +94,21 @@
         jokeTable.textContent = 'Loading...';
         const joke = await fetch5RandomJokes();
         jokeTable.innerHTML = `
-              <thead>
-              <tr>
-                <th>Joke</th>
-              </tr>
-              </thead>
-              <tbody>
-              ${joke.map(j => `<tr><td>${j}</td></tr>`).join('')}
-              </tbody>
-            `;
+          <thead>
+            <tr>
+              <th>Joke</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${joke.map((j, i) =>
+              `<tr><td>${
+                i % 2 === 0
+                ? `<a href="https://y.yarn.co/e70c2e96-18d2-455e-831d-133dd340b963.mp4">${j}</a>`
+                : j
+              }</td></tr>`
+            ).join('')}
+          </tbody>
+        `;
       } catch (e) {
         console.error(e);
         document.getElementById('joke').textContent = `Error: ${e.message}`;

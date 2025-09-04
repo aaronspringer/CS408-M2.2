@@ -20,10 +20,32 @@ th {
   font-weight: bold;
 }
 
+tr {
+  background-color: pink;
+}
+
+ul li:nth-child(odd) {
+  background-color: red;
+}
+
 tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: red;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: black;
 }
 
 tbody tr:hover {
-  background-color: #e9e9e9;
+  background-color: black;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+button {
+  color: blue;
+  width:100%;
 }
